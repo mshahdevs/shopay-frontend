@@ -1,0 +1,94 @@
+main {
+  min-height: 80vh;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+/* Product card/image responsive tweaks */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.product-detail-image {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.4rem;
+    padding: 0.6rem 0;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  .product-image {
+    height: 180px;
+  }
+  .product-detail-image {
+    max-height: 260px;
+  }
+}
+
+/* small spacing helper */
+.mb-2-sm { margin-bottom: 0.5rem; }
+
+/* Payment Screen Styles */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.payment-container {
+  animation: fadeIn 0.3s ease;
+}
+
+.payment-error {
+  animation: slideDown 0.3s ease;
+}
+
+/* Responsive Payment Form */
+@media (max-width: 768px) {
+  .payment-form-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .payment-info-card {
+    order: 2;
+  }
+}
